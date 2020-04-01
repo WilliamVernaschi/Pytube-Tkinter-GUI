@@ -1,0 +1,18 @@
+button:
+
+.BUTTON_BXP {
+   -webkit-border-radius: 100px;
+   -moz-border-radius: 100px;
+   border-radius: 100px;
+   color: #000000;
+   font-family: Open Sans;
+   font-size: 30px;
+   font-weight: 100;
+   padding: 18px;
+   background-color: #FFFFFF;
+   border: solid #000000 2px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
