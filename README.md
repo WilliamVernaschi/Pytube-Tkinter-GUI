@@ -9,4 +9,4 @@ pip install pytube3
 python3 path/to/folder/youtube_downloader.py
 ```
 Example of usage:
-![gif](https://im7.ezgif.com/tmp/ezgif-7-1023b4b4f21d.gif)
+![gif](https://media.giphy.com/media/f4VZrMW6dYa2qD0pAS/giphy.gif)
