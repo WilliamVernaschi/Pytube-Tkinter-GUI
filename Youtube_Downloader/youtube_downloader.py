@@ -20,29 +20,26 @@ class YtDownloaderApp(tk.Tk):
         self.title('Pytube Downloader')
         self.geometry('960x540')
         
-
         if (sys.platform.startswith('win')): 
             self.iconbitmap('appIcon.ico')
-            self.slash = r'\\'
         else:
             logo = tk.PhotoImage(file='appIcon.gif')
             self.call('wm', 'iconphoto', self._w, logo)
-            self.slash = '/'
         self.initialize_widgets()
 
     def initialize_widgets(self):
         
         #Loading all the images
-        self.direct_link_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}directLink.png')
-        self.from_playlist_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}fromPlaylist.png')
-        self.from_txt_file_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}txtFile.png')
-        self.exit_program_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}exitProgram.png')
-        self.main_menu_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}mainMenuSmall.png')
-        self.download_MP4_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}downloadMP4.png')
-        self.download_MP3_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}downloadMP3.png')
-        self.load_video_info_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}loadVideoInfo.png')
-        self.select_file_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}selectFile.png')
-        self.select_output_img = tk.PhotoImage(file=f'{Path(__name__).parent}{self.slash}selectOutput.png')
+        self.direct_link_img = tk.PhotoImage(file=f'{Path(__name__).parent}/directLink.png')
+        self.from_playlist_img = tk.PhotoImage(file=f'{Path(__name__).parent}/fromPlaylist.png')
+        self.from_txt_file_img = tk.PhotoImage(file=f'{Path(__name__).parent}/txtFile.png')
+        self.exit_program_img = tk.PhotoImage(file=f'{Path(__name__).parent}/exitProgram.png')
+        self.main_menu_img = tk.PhotoImage(file=f'{Path(__name__).parent}/mainMenuSmall.png')
+        self.download_MP4_img = tk.PhotoImage(file=f'{Path(__name__).parent}/downloadMP4.png')
+        self.download_MP3_img = tk.PhotoImage(file=f'{Path(__name__).parent}/downloadMP3.png')
+        self.load_video_info_img = tk.PhotoImage(file=f'{Path(__name__).parent}/loadVideoInfo.png')
+        self.select_file_img = tk.PhotoImage(file=f'{Path(__name__).parent}/selectFile.png')
+        self.select_output_img = tk.PhotoImage(file=f'{Path(__name__).parent}/selectOutput.png')
 
         #Creating the main menu widgets
         self.app_title = tk.Label(self, text='Pytube Downloader', font=self.title_font)
@@ -267,22 +264,14 @@ class YtDownloaderApp(tk.Tk):
 
 
     def merge_audio_and_video(self):
-        if (sys.platform.startswith('win')):
-            self.cmd = f'ffmpeg -i "{self.output_path}\\cachedaudio.mp4" -i "{self.output_path}\\cachedvideo.mp4"\
- -y -codec:a copy -codec:v copy "{self.output_path}\\cachedcomplete.mp4"'
-            subprocess.run(self.cmd, shell=True)
-            os.remove(f'{self.output_path}/cachedaudio.mp4')
-            os.remove(f'{self.output_path}/cachedvideo.mp4')
-            os.rename(f'{self.output_path}/cachedcomplete.mp4', f'{self.output_path}/{self.default_title}.mp4')
-        else:
-            self.cmd = f'ffmpeg -i "{self.output_path}/cachedaudio.mp4" -i "{self.output_path}/cachedvideo.mp4"\
- -y -codec:a copy -codec:v copy "{self.output_path}/cachedcomplete.mp4"'
-            
-            subprocess.run(self.cmd, shell=True)
 
-            os.remove(f'{self.output_path}/cachedaudio.mp4')
-            os.remove(f'{self.output_path}/cachedvideo.mp4')
-            os.rename(f'{self.output_path}/cachedcomplete.mp4', f'{self.output_path}/{self.default_title}.mp4')
+        self.cmd = f'ffmpeg -i "{self.output_path}/cachedaudio.mp4" -i "{self.output_path}/cachedvideo.mp4"\
+        -y -codec:a copy -codec:v copy "{self.output_path}/cachedcomplete.mp4"'
+        subprocess.run(self.cmd, shell=True)
+        os.remove(f'{self.output_path}/cachedaudio.mp4')
+        os.remove(f'{self.output_path}/cachedvideo.mp4')
+        os.rename(f'{self.output_path}/cachedcomplete.mp4', f'{self.output_path}/{self.default_title}.mp4')
+
             
 
     def playlist_dl_screen(self):
