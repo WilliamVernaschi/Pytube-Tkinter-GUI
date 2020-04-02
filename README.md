@@ -1,7 +1,7 @@
 # Pytube-Tkinter-GUI
 Simple Youtube Downloader GUI that lets you download videos and audio from a direct link, a playlist or a text file, tested on Linux and Windows
 
-**To use it on Windows, you'll have to install ffmpeg, follow this tutorial for more precise instructions: https://windowsloop.com/install-ffmpeg-windows-10/. It's native on Linux, so you won't have to worry about it.**
+**To use it on Windows, you'll have to install ffmpeg, follow this tutorial for more precise instructions: https://windowsloop.com/install-ffmpeg-windows-10/. It's native on most Linux distros, so you won't have to worry about it.**
 
 How to run it using Python 3:
 ```
