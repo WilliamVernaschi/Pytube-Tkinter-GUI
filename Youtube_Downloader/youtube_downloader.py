@@ -4,7 +4,6 @@ import pytube
 import threading
 import subprocess
 import tkinter as tk
-from time import sleep
 from pathlib import Path
 from tkinter import filedialog
 
@@ -28,18 +27,19 @@ class YtDownloaderApp(tk.Tk):
         self.initialize_widgets()
 
     def initialize_widgets(self):
-        
+        current_path = Path(__name__).parent
+
         #Loading all the images
-        self.direct_link_img = tk.PhotoImage(file=f'{Path(__name__).parent}/directLink.png')
-        self.from_playlist_img = tk.PhotoImage(file=f'{Path(__name__).parent}/fromPlaylist.png')
-        self.from_txt_file_img = tk.PhotoImage(file=f'{Path(__name__).parent}/txtFile.png')
-        self.exit_program_img = tk.PhotoImage(file=f'{Path(__name__).parent}/exitProgram.png')
-        self.main_menu_img = tk.PhotoImage(file=f'{Path(__name__).parent}/mainMenuSmall.png')
-        self.download_MP4_img = tk.PhotoImage(file=f'{Path(__name__).parent}/downloadMP4.png')
-        self.download_MP3_img = tk.PhotoImage(file=f'{Path(__name__).parent}/downloadMP3.png')
-        self.load_video_info_img = tk.PhotoImage(file=f'{Path(__name__).parent}/loadVideoInfo.png')
-        self.select_file_img = tk.PhotoImage(file=f'{Path(__name__).parent}/selectFile.png')
-        self.select_output_img = tk.PhotoImage(file=f'{Path(__name__).parent}/selectOutput.png')
+        self.direct_link_img = tk.PhotoImage(file=f'{current_path}/directLink.png')
+        self.from_playlist_img = tk.PhotoImage(file=f'{current_path}/fromPlaylist.png')
+        self.from_txt_file_img = tk.PhotoImage(file=f'{current_path}/txtFile.png')
+        self.exit_program_img = tk.PhotoImage(file=f'{current_path}/exitProgram.png')
+        self.main_menu_img = tk.PhotoImage(file=f'{current_path}/mainMenuSmall.png')
+        self.download_MP4_img = tk.PhotoImage(file=f'{current_path}/downloadMP4.png')
+        self.download_MP3_img = tk.PhotoImage(file=f'{current_path}/downloadMP3.png')
+        self.load_video_info_img = tk.PhotoImage(file=f'{current_path}/loadVideoInfo.png')
+        self.select_file_img = tk.PhotoImage(file=f'{current_path}/selectFile.png')
+        self.select_output_img = tk.PhotoImage(file=f'{current_path}/selectOutput.png')
 
         #Creating the main menu widgets
         self.app_title = tk.Label(self, text='Pytube Downloader', font=self.title_font)
