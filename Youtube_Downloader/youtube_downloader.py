@@ -44,13 +44,13 @@ class YtDownloaderApp(tk.Tk):
         #Creating the main menu widgets
         self.app_title = tk.Label(self, text='Pytube Downloader', font=self.title_font)
         self.direct_link = tk.Button(self, image=self.direct_link_img, border=0, 
-         bg='#D9D9D9', activebackground='#CCCCCC', command=self.direct_dl_screen)
+         activebackground='#CCCCCC', command=self.direct_dl_screen)
         self.from_playlist = tk.Button(self, image=self.from_playlist_img, border=0,
-         bg='#D9D9D9', activebackground='#CCCCCC', command=self.playlist_dl_screen)
+         activebackground='#CCCCCC', command=self.playlist_dl_screen)
         self.from_txt_file = tk.Button(self, image=self.from_txt_file_img, border=0, 
-         bg='#D9D9D9', activebackground='#CCCCCC', command=self.txt_dl_screen)
+         activebackground='#CCCCCC', command=self.txt_dl_screen)
         self.exit_program = tk.Button(self, image=self.exit_program_img, border=0,
-         bg='#D9D9D9', activebackground='#CCCCCC', command=quit)
+         activebackground='#CCCCCC', command=quit)
         
         #Placing the main menu widgets
         self.app_title.pack(side=tk.TOP)
@@ -101,7 +101,7 @@ class YtDownloaderApp(tk.Tk):
         self.txt_file_instructions = tk.Label(self.url_frame, text='The text file should have one URL for each line and nothing else.',
         font=self.small_font)
         self.select_file = tk.Button(self.url_frame, image=self.select_file_img, border=0,
-         bg='#D9D9D9', activebackground='#CCCCCC', command=self.select_txt_file)
+          activebackground='#CCCCCC', command=self.select_txt_file)
         self.file_selected = tk.Label(self, text='File selected successfully', border=0,
         font=self.small_font)
 
