@@ -26,6 +26,7 @@ class YtDownloaderApp(tk.Tk):
             self.call('wm', 'iconphoto', self._w, logo)
         self.initialize_widgets()
 
+        
     def initialize_widgets(self):
         current_path = Path(__name__).parent
 
